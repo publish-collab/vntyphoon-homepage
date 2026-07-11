@@ -1,5 +1,5 @@
-/* ==========================================================================
-   VN Typhoon — UI interactions
+﻿/* ==========================================================================
+   VN Typhoon ??UI interactions
    - language switcher init
    - sticky header shadow
    - mobile menu
@@ -102,7 +102,7 @@
       const btn = form.querySelector('button[type="submit"]');
       const original = btn.textContent;
       btn.disabled = true;
-      btn.textContent = "…";
+      btn.textContent = "??;
       try {
         const res = await fetch(action, {
           method: "POST",
@@ -111,7 +111,7 @@
         });
         if (res.ok) {
           form.reset();
-          btn.textContent = "✓";
+          btn.textContent = "??;
           setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 2500);
         } else {
           throw new Error("Network");
@@ -124,7 +124,7 @@
       }
       return;
     }
-    // No endpoint configured yet → fall back to mailto so the form still works.
+    // No endpoint configured yet ??fall back to mailto so the form still works.
     e.preventDefault();
     mailtoFallback(form);
   });
@@ -134,10 +134,11 @@
     const email = form.email?.value || "";
     const company = form.company?.value || "";
     const message = form.message?.value || "";
-    const subject = encodeURIComponent(`Project inquiry — ${name || "VN Typhoon"}`);
+    const subject = encodeURIComponent(`Project inquiry ??${name || "VN Typhoon"}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
     );
     window.location.href = `mailto:contact@vntyphoon.com?subject=${subject}&body=${body}`;
   }
 })();
+

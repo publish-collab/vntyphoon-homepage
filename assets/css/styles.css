@@ -1,6 +1,6 @@
-/* ==========================================================================
-   VN Typhoon — Stylesheet
-   Bright · clean · minimal · portfolio-first
+﻿/* ==========================================================================
+   VN Typhoon ??Stylesheet
+   Bright 쨌 clean 쨌 minimal 쨌 portfolio-first
    Palette: white + ink #0B1220, one accent (electric blue #2F5BFF)
    Type:   Space Grotesk (headings) + Inter (body) + system non-Latin fallback
    ========================================================================== */
@@ -336,3 +336,4 @@ form { display: grid; gap: 16px; background: #fff; padding: clamp(22px, 3vw, 32p
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .card:hover, .work:hover { transform: none; }
 }
+

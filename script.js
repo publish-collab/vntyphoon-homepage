@@ -1,4 +1,4 @@
-const header = document.querySelector("[data-header]");
+﻿const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 const year = document.querySelector("[data-year]");
@@ -48,3 +48,4 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
