@@ -138,6 +138,6 @@
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
     );
-    window.location.href = `mailto:publish@appfactory.vn?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contact@vntyphoon.com?subject=${subject}&body=${body}`;
   }
 })();
