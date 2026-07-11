@@ -555,6 +555,27 @@ h3 {
   gap: 0.65rem;
 }
 
+.activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.activity-header p {
+  margin: 0;
+  color: var(--muted-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.activity-header span {
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .activity-row {
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr) auto;

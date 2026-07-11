@@ -1,28 +1,27 @@
-﻿# Website c척ng ty Vntyphoon
+# Website công ty Vntyphoon
 
-Website t칫nh cho Vntyphoon, 휃튼沼즓 x창y d沼켷g b梳켷g HTML, CSS v횪 JavaScript thu梳쬷.
+Website tĩnh cho VNTYPHOON COMPANY, được xây dựng bằng HTML, CSS và JavaScript thuần.
 
 ## Files
 
-- `index.html` - C梳쪀 tr첬c v횪 n沼셢 dung trang
-- `styles.css` - Giao di沼뇆 responsive, m횪u s梳칌, th梳?n沼셢 dung, n첬t b梳쩷 v횪 hi沼뇎 沼쯰g
-- `script.js` - Menu mobile, tr梳죒g th찼i header, hi沼뇎 沼쯰g xu梳쩿 hi沼뇆 v횪 n훱m 沼?footer
+- `index.html` - Cấu trúc và nội dung trang
+- `styles.css` - Giao diện responsive, màu sắc, thẻ nội dung, nút bấm và hiệu ứng
+- `script.js` - Menu mobile, trạng thái header và hiệu ứng xuất hiện
 
-## Xem th沼?tr챗n m찼y
+## Xem thử trên máy
 
-M沼?tr沼켧 ti梳퓈 file `index.html` trong tr챙nh duy沼뇍.
+Mở trực tiếp file `index.html` trong trình duyệt.
 
-Ho梳톍 ch梳죣 m沼셳 server t칫nh 휃퉤n gi梳즢 trong th튼 m沼쩭 n횪y:
+Hoặc chạy một server tĩnh đơn giản trong thư mục này:
 
 ```bash
 python -m http.server 8000
 ```
 
-Sau 휃처 truy c梳춑:
+Sau đó truy cập:
 
 ```text
 http://localhost:8000
 ```
 
-Kh척ng c梳쬷 backend, th튼 vi沼뇆 tr梳?ph챠 ho梳톍 build tools.
-
+Không cần backend, thư viện trả phí hoặc build tools.
