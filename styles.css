@@ -183,38 +183,41 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
+  flex-flow: row nowrap;
   gap: 0.7rem;
+  min-width: 0;
   font-weight: 800;
   letter-spacing: 0;
+}
+
+.brand-name {
+  display: block;
+  flex: 0 1 auto;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .brand-logo-badge {
   position: relative;
   display: inline-flex;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  overflow: hidden;
-  border: 1px solid rgba(88, 236, 255, 0.42);
-  border-radius: 12px;
-  background:
-    radial-gradient(circle at 35% 22%, rgba(88, 236, 255, 0.3), transparent 52%),
-    linear-gradient(145deg, rgba(22, 135, 255, 0.22), rgba(6, 19, 38, 0.94));
+  border-radius: 13px;
+  background: transparent;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.055) inset,
-    0 10px 28px rgba(88, 236, 255, 0.18);
+    0 11px 26px rgba(0, 8, 24, 0.32),
+    0 0 22px rgba(115, 230, 243, 0.14);
 }
 
 .brand-logo-badge::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  pointer-events: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 38%, rgba(88, 236, 255, 0.12));
-  opacity: 0.5;
+  content: none;
 }
 
 .brand-mark {
@@ -226,10 +229,10 @@ button {
 }
 
 .brand-logo-badge .brand-mark {
-  width: 40px;
-  height: 40px;
-  transform: scale(1.46);
-  transform-origin: center;
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
 }
 
 .nav-links {
@@ -1514,6 +1517,25 @@ h3 {
 }
 
 @media (max-width: 767px) {
+  .nav {
+    gap: 0.5rem;
+  }
+
+  .brand {
+    gap: 0.5rem;
+  }
+
+  .brand-name {
+    font-size: clamp(0.7rem, 3.15vw, 0.82rem);
+    letter-spacing: -0.025em;
+  }
+
+  .brand-logo-badge,
+  .brand-logo-badge .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
   .nav-links {
     position: fixed;
     inset: 72px 1rem auto;
@@ -1611,7 +1633,15 @@ h3 {
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.35rem;
+    gap: clamp(0.65rem, 1.5vw, 1.35rem);
+  }
+
+  .nav-links a {
+    font-size: clamp(0.78rem, 1.25vw, 0.95rem);
+  }
+
+  .brand-name {
+    font-size: clamp(0.78rem, 1.35vw, 1rem);
   }
 
   .nav-toggle {
