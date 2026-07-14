@@ -30,6 +30,34 @@ if (navToggle && navLinks) {
   });
 }
 
+const policyCard = document.querySelector("[data-policy-card]");
+const policyToggle = document.querySelector("[data-policy-toggle]");
+const policyPanel = document.querySelector("[data-policy-panel]");
+const policyLabel = document.querySelector("[data-policy-label]");
+
+if (policyCard && policyToggle && policyPanel && policyLabel) {
+  function setPolicyPanel(isOpen) {
+    policyCard.classList.toggle("is-policy-open", isOpen);
+    policyToggle.setAttribute("aria-expanded", String(isOpen));
+    policyPanel.hidden = !isOpen;
+    policyLabel.textContent = isOpen ? "Ẩn chính sách" : "Xem chính sách";
+  }
+
+  function togglePolicyPanel() {
+    setPolicyPanel(policyToggle.getAttribute("aria-expanded") !== "true");
+  }
+
+  policyToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    togglePolicyPanel();
+  });
+
+  policyCard.addEventListener("click", (event) => {
+    if (event.target instanceof Element && event.target.closest("a, button")) return;
+    togglePolicyPanel();
+  });
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {

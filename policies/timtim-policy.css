@@ -1,0 +1,301 @@
+:root {
+  --bg: #081a31;
+  --surface: rgba(210, 240, 255, 0.09);
+  --border: rgba(163, 232, 255, 0.24);
+  --text: #f4f9ff;
+  --muted: #b8d3e9;
+  --muted-strong: #e2f4ff;
+  --blue: #1687ff;
+  --cyan: #58ecff;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #061326;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 5%, rgba(88, 236, 255, 0.3), transparent 28rem),
+    radial-gradient(circle at 90% 15%, rgba(22, 135, 255, 0.28), transparent 32rem),
+    linear-gradient(142deg, #061326 0%, #09213c 35%, #103c67 60%, #061326 100%);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(88, 236, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 135, 255, 0.045) 1px, transparent 1px),
+    radial-gradient(circle, rgba(88, 236, 255, 0.12) 1px, transparent 1.7px);
+  background-size: 48px 48px, 48px 48px, 96px 96px;
+  opacity: 0.72;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.policy-container {
+  width: min(100% - 2rem, 1000px);
+  margin-inline: auto;
+}
+
+.policy-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: rgba(6, 19, 38, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.policy-nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem 1rem;
+}
+
+.policy-brand {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.policy-logo {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(88, 236, 255, 0.4);
+  border-radius: 11px;
+  background: rgba(22, 135, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(88, 236, 255, 0.14);
+}
+
+.policy-logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  transform: scale(1.42);
+}
+
+.back-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(88, 236, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(88, 236, 255, 0.08);
+  padding: 0.6rem 0.95rem;
+  color: var(--cyan);
+  font-size: 0.86rem;
+  font-weight: 750;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  border-color: rgba(88, 236, 255, 0.56);
+  background: rgba(88, 236, 255, 0.15);
+  color: #d2fbff;
+}
+
+.policy-main {
+  padding: clamp(3.5rem, 9vw, 6.5rem) 0;
+}
+
+.policy-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 820px;
+  margin-inline: auto;
+  border: 1px solid rgba(163, 232, 255, 0.27);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(210, 240, 255, 0.12), rgba(22, 135, 255, 0.05)),
+    rgba(6, 19, 38, 0.67);
+  padding: clamp(1.5rem, 6vw, 3.75rem);
+  box-shadow: var(--shadow), 0 0 56px rgba(22, 135, 255, 0.11);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.policy-card::before {
+  content: "";
+  position: absolute;
+  top: -12rem;
+  right: -10rem;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  background: rgba(88, 236, 255, 0.13);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.policy-eyebrow {
+  position: relative;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  color: #8af2ff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(88, 236, 255, 0.18);
+}
+
+.policy-eyebrow::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  flex: 0 0 auto;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  box-shadow: 0 0 14px rgba(88, 236, 255, 0.48);
+  transform: rotate(45deg);
+}
+
+h1,
+h2,
+p {
+  position: relative;
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 18ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.15rem, 7vw, 4rem);
+  line-height: 1.08;
+}
+
+h2 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+  line-height: 1.3;
+}
+
+.policy-intro {
+  max-width: 68ch;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+.policy-section {
+  position: relative;
+  border-top: 1px solid rgba(163, 232, 255, 0.15);
+  padding-top: 1.35rem;
+  margin-top: 1.35rem;
+}
+
+.policy-section p,
+.policy-section li {
+  color: var(--muted);
+}
+
+.policy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-section ul,
+.policy-section ol {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.policy-email {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.3rem;
+  color: var(--cyan);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.policy-email:hover,
+.policy-email:focus-visible {
+  color: #d2fbff;
+}
+
+.policy-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.4rem 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+.policy-footer p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(88, 236, 255, 0.74);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .policy-nav {
+    flex-wrap: wrap;
+    padding: 0.75rem 0;
+  }
+
+  .policy-brand {
+    font-size: 0.86rem;
+  }
+
+  .back-link {
+    width: 100%;
+  }
+
+  .policy-card {
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
