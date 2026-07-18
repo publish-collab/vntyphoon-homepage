@@ -21,6 +21,81 @@ function setHeaderState() {
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
 
+const hero = document.querySelector(".hero");
+const heroBrandShape = document.querySelector("[data-hero-brand-shape]");
+const desktopParallax = window.matchMedia("(min-width: 768px)");
+let parallaxFrame = 0;
+let parallaxListening = false;
+const parallaxCurrent = { x: 0, y: 0, rotation: 0, scale: 1 };
+const parallaxTarget = { x: 0, y: 0, rotation: 0, scale: 1 };
+
+function setParallaxProperties(values) {
+  if (!heroBrandShape) return;
+  heroBrandShape.style.setProperty("--v-x", `${values.x.toFixed(2)}px`);
+  heroBrandShape.style.setProperty("--v-y", `${values.y.toFixed(2)}px`);
+  heroBrandShape.style.setProperty("--v-rotation", `${values.rotation.toFixed(3)}deg`);
+  heroBrandShape.style.setProperty("--v-scale", values.scale.toFixed(4));
+}
+
+function renderHeroParallax() {
+  parallaxFrame = 0;
+  const easing = 0.12;
+
+  parallaxCurrent.x += (parallaxTarget.x - parallaxCurrent.x) * easing;
+  parallaxCurrent.y += (parallaxTarget.y - parallaxCurrent.y) * easing;
+  parallaxCurrent.rotation += (parallaxTarget.rotation - parallaxCurrent.rotation) * easing;
+  parallaxCurrent.scale += (parallaxTarget.scale - parallaxCurrent.scale) * easing;
+  setParallaxProperties(parallaxCurrent);
+
+  const unsettled =
+    Math.abs(parallaxTarget.x - parallaxCurrent.x) > 0.03 ||
+    Math.abs(parallaxTarget.y - parallaxCurrent.y) > 0.03 ||
+    Math.abs(parallaxTarget.rotation - parallaxCurrent.rotation) > 0.003 ||
+    Math.abs(parallaxTarget.scale - parallaxCurrent.scale) > 0.0002;
+
+  if (unsettled) parallaxFrame = window.requestAnimationFrame(renderHeroParallax);
+}
+
+function updateHeroParallax() {
+  if (!hero || !heroBrandShape || motionPreference.matches || !desktopParallax.matches) return;
+
+  const progress = Math.min(Math.max(window.scrollY / Math.max(hero.offsetHeight * 0.9, 1), 0), 1);
+  parallaxTarget.x = -18 * progress;
+  parallaxTarget.y = 52 * progress;
+  parallaxTarget.rotation = 1.8 * progress;
+  parallaxTarget.scale = 1 + 0.025 * progress;
+
+  if (!parallaxFrame) parallaxFrame = window.requestAnimationFrame(renderHeroParallax);
+}
+
+function resetHeroParallax() {
+  if (parallaxFrame) window.cancelAnimationFrame(parallaxFrame);
+  parallaxFrame = 0;
+  Object.assign(parallaxCurrent, { x: 0, y: 0, rotation: 0, scale: 1 });
+  Object.assign(parallaxTarget, parallaxCurrent);
+  setParallaxProperties(parallaxCurrent);
+}
+
+function syncHeroParallax() {
+  const shouldRun = Boolean(hero && heroBrandShape && !motionPreference.matches && desktopParallax.matches);
+
+  if (shouldRun && !parallaxListening) {
+    window.addEventListener("scroll", updateHeroParallax, { passive: true });
+    parallaxListening = true;
+    updateHeroParallax();
+  } else if (!shouldRun && parallaxListening) {
+    window.removeEventListener("scroll", updateHeroParallax);
+    parallaxListening = false;
+    resetHeroParallax();
+  } else if (!shouldRun) {
+    resetHeroParallax();
+  }
+}
+
+syncHeroParallax();
+desktopParallax.addEventListener("change", syncHeroParallax);
+motionPreference.addEventListener("change", syncHeroParallax);
+
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("is-open");
@@ -218,7 +293,9 @@ function startEntranceAnimations() {
     (entries) => {
       entries.forEach((entry) => {
         const isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.14;
-        entry.target.classList.toggle("is-visible", isVisible);
+        if (!isVisible) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
     },
     { threshold: [0, 0.14], rootMargin: "0px 0px -6%" }
@@ -227,12 +304,21 @@ function startEntranceAnimations() {
   revealItems.forEach((item) => observer.observe(item));
 }
 
+let entranceAnimationsStarted = false;
+
+function ensureEntranceAnimationsStart() {
+  if (entranceAnimationsStarted) return;
+  entranceAnimationsStarted = true;
+  startEntranceAnimations();
+}
+
 if (!motionEnabled) {
   document.documentElement.classList.add("hero-ready");
   revealItems.forEach((item) => item.classList.add("is-visible"));
 } else {
   window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(startEntranceAnimations);
+    window.requestAnimationFrame(ensureEntranceAnimationsStart);
   });
+  window.setTimeout(ensureEntranceAnimationsStart, 160);
 }
 
