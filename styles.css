@@ -152,7 +152,6 @@ button {
 #about,
 #process,
 #apps,
-#projects,
 #contact {
   scroll-margin-top: 96px;
 }
@@ -913,8 +912,7 @@ h3 {
   font-weight: 900;
 }
 
-.about-section,
-.projects-section {
+.about-section {
   background:
     radial-gradient(circle at 14% 10%, rgba(88, 236, 255, 0.09), transparent 24rem),
     linear-gradient(180deg, rgba(22, 135, 255, 0.14), rgba(13, 41, 73, 0.08));
@@ -1007,25 +1005,6 @@ h3 {
   transform: translateY(-50%);
 }
 
-.projects-section h2 {
-  max-width: 860px;
-  font-size: clamp(1.9rem, 4.6vw, 3.25rem);
-  line-height: 1.08;
-}
-
-.projects-section {
-  padding-top: 4.75rem;
-}
-
-.projects-section .section-heading {
-  max-width: 880px;
-}
-
-.projects-section .section-heading p:not(.eyebrow) {
-  max-width: 760px;
-  line-height: 1.72;
-}
-
 .process-list {
   display: grid;
   gap: 0.8rem;
@@ -1054,20 +1033,6 @@ h3 {
 
 .process-step h3 {
   margin: 0;
-}
-
-.project-card {
-  min-height: 168px;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card h3 {
-  line-height: 1.28;
-}
-
-.project-card p {
-  line-height: 1.68;
 }
 
 .apps-section {
@@ -1106,13 +1071,23 @@ h3 {
   line-height: 1.7;
 }
 
+.apps-grid {
+  position: relative;
+  display: grid;
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
 .timtim-card {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   width: 100%;
-  max-width: 800px;
-  margin-inline: auto;
+  max-width: none;
+  margin-inline: 0;
   border: 1px solid rgba(163, 232, 255, 0.27);
   border-radius: 20px;
   background:
@@ -1141,7 +1116,7 @@ h3 {
 }
 
 .timtim-card-main {
-  padding: clamp(1.35rem, 4vw, 2rem);
+  padding: clamp(1.25rem, 3vw, 1.6rem);
 }
 
 .timtim-card-header {
@@ -1208,8 +1183,8 @@ h3 {
   max-width: 66ch;
   margin: 0 0 1.15rem;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.96rem;
+  line-height: 1.65;
 }
 
 .policy-toggle {
@@ -1266,7 +1241,7 @@ h3 {
 .timtim-policy-panel {
   border-top: 1px solid rgba(163, 232, 255, 0.16);
   background: rgba(4, 17, 33, 0.34);
-  padding: 1rem clamp(1.35rem, 4vw, 2rem) 1.25rem;
+  padding: 1rem clamp(1.25rem, 3vw, 1.6rem) 1.2rem;
   cursor: default;
   animation: policy-panel-in 200ms ease-out;
 }
@@ -1523,6 +1498,10 @@ h3 {
   --reveal-delay: 90ms;
 }
 
+.apps-grid > .timtim-card.is-visible:nth-child(2) {
+  --reveal-delay: 135ms;
+}
+
 .contact-panel.is-visible {
   --reveal-delay: 70ms;
 }
@@ -1550,15 +1529,13 @@ h3 {
 
 @media (hover: hover) and (pointer: fine) {
   .service-card:hover,
-  .project-card:hover,
   .timtim-card:hover,
   .contact-panel:hover {
     translate: 0 -4px;
     border-color: rgba(88, 236, 255, 0.46);
   }
 
-  .service-card:hover,
-  .project-card:hover {
+  .service-card:hover {
     box-shadow:
       0 20px 48px rgba(0, 0, 0, 0.22),
       0 0 34px rgba(88, 236, 255, 0.13);
@@ -1700,8 +1677,7 @@ h3 {
 }
 
 @media (min-width: 640px) {
-  .services-grid,
-  .project-grid {
+  .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1729,7 +1705,6 @@ h3 {
   #about,
   #process,
   #apps,
-  #projects,
   #contact {
     scroll-margin-top: 112px;
   }
@@ -1764,6 +1739,10 @@ h3 {
     padding: 3rem 3.5rem;
   }
 
+  .apps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
 }
 
 @media (min-width: 960px) {
@@ -1772,18 +1751,10 @@ h3 {
     padding-bottom: 2.75rem;
   }
 
-  .projects-section {
-    padding-top: 6.25rem;
-  }
-
   .services-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .project-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  }
 }
 
 @media (min-width: 1200px) {

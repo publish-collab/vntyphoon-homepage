@@ -251,12 +251,13 @@ function scheduleSectionReplay(section) {
   sectionReplayCleanup = cleanup;
 }
 
-const policyCard = document.querySelector("[data-policy-card]");
-const policyToggle = document.querySelector("[data-policy-toggle]");
-const policyPanel = document.querySelector("[data-policy-panel]");
-const policyLabel = document.querySelector("[data-policy-label]");
+document.querySelectorAll("[data-policy-card]").forEach((policyCard) => {
+  const policyToggle = policyCard.querySelector("[data-policy-toggle]");
+  const policyPanel = policyCard.querySelector("[data-policy-panel]");
+  const policyLabel = policyCard.querySelector("[data-policy-label]");
 
-if (policyCard && policyToggle && policyPanel && policyLabel) {
+  if (!policyToggle || !policyPanel || !policyLabel) return;
+
   function setPolicyPanel(isOpen) {
     policyCard.classList.toggle("is-policy-open", isOpen);
     policyToggle.setAttribute("aria-expanded", String(isOpen));
@@ -277,7 +278,7 @@ if (policyCard && policyToggle && policyPanel && policyLabel) {
     if (event.target instanceof Element && event.target.closest("a, button")) return;
     togglePolicyPanel();
   });
-}
+});
 
 const revealItems = document.querySelectorAll(".reveal");
 
