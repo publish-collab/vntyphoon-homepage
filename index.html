@@ -1,325 +1,280 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="-GU5ykD8LEvi59P13ltTi3tPg5S7Ytns7guahe-p3Ss" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vntyphoon | Ứng dụng, tự động hóa và hệ thống AI</title>
-  <meta name="description" content="Vntyphoon giúp doanh nghiệp xây dựng ứng dụng di động, website, công cụ AI, chatbot và hệ thống tự động hóa." />
-  <meta name="theme-color" content="#071426" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/favicon/vntyphoon-favicon-wing.png" />
-  <link rel="shortcut icon" type="image/png" href="assets/favicon/vntyphoon-favicon-wing.png" />
-  <link rel="apple-touch-icon" href="assets/favicon/vntyphoon-favicon-wing.png" />
+  <title>VNTYPHOON</title>
+  <meta name="description" content="" />
+  <link rel="canonical" href="/" />
+  <meta name="theme-color" content="#f7f4ed" />
+  <link rel="icon" href="/favicon.ico?v=20260719b" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260719b" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260719b" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260719b" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js-enabled");</script>
+  <script src="locales.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Bỏ qua đến nội dung</a>
+  <a class="skip-link" href="#main-content" data-i18n="skip.content"></a>
 
   <header class="site-header" data-header>
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Trang chủ Vntyphoon">
-        <span class="brand-logo-badge" aria-hidden="true">
-          <img class="brand-mark" src="assets/logo/vntyphoon-wing-v-transparent.png" alt="" />
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="" data-i18n-aria-label="brand.home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/logo/vntyphoon-wing-v-transparent.png" width="1098" height="653" alt="" />
         </span>
         <span class="brand-name">VNTYPHOON COMPANY LIMITED</span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false" data-nav-toggle>
-        <span></span>
-        <span></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span data-i18n="nav.menu"></span>
+        <span class="nav-toggle-lines" aria-hidden="true"><i></i><i></i></span>
       </button>
 
-      <nav class="nav-links" aria-label="Điều hướng chính" data-nav-links>
-        <a href="#about">Giới thiệu</a>
-        <a href="#services">Dịch vụ</a>
-        <a href="#process">Quy trình</a>
-        <a href="#apps">Ứng dụng</a>
-        <a href="#contact">Liên hệ</a>
+      <nav class="primary-nav" id="primary-navigation" aria-label="" data-i18n-aria-label="nav.primary" data-nav>
+        <a href="#about" data-i18n="nav.about"></a>
+        <a href="#philosophy" data-i18n="nav.philosophy"></a>
+        <a href="#apps" data-i18n="nav.apps"></a>
+        <a href="#build" data-i18n="nav.build"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+        <div class="language-selector" role="group" aria-label="" data-i18n-aria-label="language.selector">
+          <button type="button" data-language="vi" aria-pressed="false" aria-label="" data-i18n-aria-label="language.vi">VI</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-language="en" aria-pressed="false" aria-label="" data-i18n-aria-label="language.en">EN</button>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero section" id="top">
-      <div class="hero-brand-shape" data-hero-brand-shape aria-hidden="true">
-        <img src="assets/logo/vntyphoon-wing-v-transparent.png" alt="" draggable="false" />
-      </div>
-
-      <div class="container hero-grid">
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">ĐỐI TÁC CÔNG NGHỆ CHO DOANH NGHIỆP HIỆN ĐẠI</p>
-          <h1>VNTYPHOON COMPANY</h1>
-          <p class="tagline">Phát triển ứng dụng<br />Tự động hóa công việc<br />Tăng trưởng cùng AI</p>
-          <p class="hero-description">
-            Vntyphoon giúp doanh nghiệp xây dựng ứng dụng di động, website,<br class="desktop-break" />
-            công cụ AI, chatbot và hệ thống tự động hóa.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Bắt đầu dự án</a>
-            <a class="button button-secondary" href="#services">Xem dịch vụ</a>
+          <p class="kicker hero-enter" style="--enter-delay: 40ms" data-i18n="hero.kicker"></p>
+          <h1 class="hero-enter" id="hero-title" style="--enter-delay: 100ms" data-i18n-lines="hero.title"></h1>
+          <p class="hero-intro hero-enter" style="--enter-delay: 170ms" data-i18n="hero.intro"></p>
+          <div class="hero-actions hero-enter" style="--enter-delay: 230ms">
+            <a class="button button-primary" href="#apps" data-i18n="hero.primaryAction"></a>
+            <a class="text-link" href="#about"><span data-i18n="hero.secondaryAction"></span> <span aria-hidden="true">↘</span></a>
           </div>
         </div>
 
-        <div class="product-visual" role="img" aria-label="Bản xem trước dashboard AI và phần mềm">
-          <div class="visual-top">
-            <span></span>
-            <span></span>
-            <span></span>
-            <p>AI Operations Dashboard</p>
+        <figure class="hero-visual hero-enter" style="--enter-delay: 180ms" aria-labelledby="hero-visual-caption" data-drift="0.24">
+          <div class="editorial-orbit orbit-one" aria-hidden="true"></div>
+          <div class="editorial-orbit orbit-two" aria-hidden="true"></div>
+
+          <div class="phone phone-timtim" aria-label="" data-i18n-aria-label="hero.timtimLabel">
+            <div class="phone-bar"><span>09:41</span><span aria-hidden="true">•••</span></div>
+            <div class="phone-screen">
+              <div class="app-mini-brand"><span class="app-dot timtim-dot"></span><strong>TimTim</strong></div>
+              <p class="phone-lead" data-i18n="hero.timtimLead"></p>
+              <div class="profile-pair" aria-hidden="true">
+                <span></span><i></i><span></span>
+              </div>
+              <div class="message-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
           </div>
-          <div class="visual-body">
-            <div class="signal-panel">
-              <div>
-                <p>Quy trình AI</p>
-                <strong>84%</strong>
-              </div>
-              <span class="status-pill">Đang xử lý dữ liệu</span>
-              <div class="bar"><span></span></div>
-            </div>
 
-            <div class="activity-panel">
-              <div class="activity-header">
-                <p>Hoạt động gần đây</p>
-                <span>Xem tất cả</span>
-              </div>
-              <div class="activity-row">
-                <span class="activity-icon"></span>
-                <div>
-                  <h3>Phân tích dữ liệu khách hàng</h3>
-                  <p>Hoàn thành • 2 phút trước</p>
-                </div>
-                <span class="activity-badge success">Thành công</span>
-              </div>
-              <div class="activity-row">
-                <span class="activity-icon active"></span>
-                <div>
-                  <h3>Huấn luyện mô hình AI</h3>
-                  <p>Đang chạy • 15 phút trước</p>
-                </div>
-                <span class="activity-badge processing">Đang xử lý</span>
-              </div>
-              <div class="activity-row">
-                <span class="activity-icon"></span>
-                <div>
-                  <h3>Đồng bộ hệ thống</h3>
-                  <p>Hoàn thành • 1 giờ trước</p>
-                </div>
-                <span class="activity-badge success">Thành công</span>
-              </div>
+          <div class="phone phone-tarot" aria-label="" data-i18n-aria-label="hero.tarotLabel">
+            <div class="phone-bar"><span>09:41</span><span aria-hidden="true">•••</span></div>
+            <div class="phone-screen">
+              <div class="app-mini-brand"><span class="app-dot tarot-dot"></span><strong>Tarot Queen</strong></div>
+              <p class="phone-overline" data-i18n="hero.tarotOverline"></p>
+              <div class="tarot-card-symbol" aria-hidden="true"><span>✦</span></div>
+              <p class="phone-note" data-i18n="hero.tarotNote"></p>
             </div>
+          </div>
 
-            <div class="metric-grid">
-              <span><strong>App</strong><small>Ứng dụng di động</small></span>
-              <span><strong>Cloud</strong><small>Điện toán đám mây</small></span>
-              <span><strong>AI Bot</strong><small>Chatbot thông minh</small></span>
-              <span><strong>UX</strong><small>Thiết kế trải nghiệm</small></span>
-            </div>
+          <figcaption id="hero-visual-caption" data-i18n="hero.caption"></figcaption>
+        </figure>
+      </div>
+      <div class="hero-index shell" aria-hidden="true"><span>VNT / 2026</span><i></i><span>H2H</span></div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="shell editorial-split">
+        <div class="section-label reveal">
+          <p class="kicker" data-i18n="about.kicker"></p>
+          <span>01</span>
+        </div>
+        <div class="editorial-content">
+          <h2 class="statement reveal" id="about-title" data-i18n-lines="about.title"></h2>
+          <div class="two-column-copy reveal">
+            <p data-i18n="about.bodyOne"></p>
+            <p data-i18n="about.bodyTwo"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="about-container about-grid reveal">
-        <div class="about-heading">
-          <p class="eyebrow">GIỚI THIỆU</p>
-          <h2>Biến ý tưởng thành sản phẩm số có thể vận hành</h2>
+    <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
+      <div class="shell philosophy-layout">
+        <div class="philosophy-title reveal">
+          <p class="kicker" data-i18n="philosophy.kicker"></p>
+          <h2 id="philosophy-title" data-i18n-lines="philosophy.title"></h2>
         </div>
-        <div class="about-copy">
-          <p>
-            VNTYPHOON đồng hành cùng doanh nghiệp từ giai đoạn định hình ý tưởng, thiết kế trải nghiệm, phát triển sản phẩm đến triển khai thực tế. Chúng tôi tập trung vào những giải pháp rõ ràng, dễ sử dụng và có khả năng mở rộng lâu dài.
-          </p>
-          <ul class="about-points" aria-label="Cách VNTYPHOON đồng hành cùng doanh nghiệp">
-            <li>Làm rõ ý tưởng và phạm vi sản phẩm</li>
-            <li>Thiết kế trải nghiệm phù hợp người dùng</li>
-            <li>Phát triển, kiểm thử và triển khai thực tế</li>
-          </ul>
+        <div class="philosophy-copy reveal">
+          <p class="philosophy-lead" data-i18n="philosophy.lead"></p>
+          <p data-i18n="philosophy.body"></p>
+          <div class="principle-line" aria-label="" data-i18n-aria-label="philosophy.principlesLabel">
+            <span data-i18n="philosophy.clarity"></span><i></i><span data-i18n="philosophy.care"></span><i></i><span data-i18n="philosophy.connection"></span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">DỊCH VỤ</p>
-          <h2>Dịch vụ công nghệ cho doanh nghiệp hiện đại</h2>
-          <p>VNTYPHOON COMPANY giúp doanh nghiệp xây dựng ứng dụng, website, công cụ AI và hệ thống tự động hóa phù hợp với nhu cầu thực tế.</p>
-        </div>
+    <section class="section apps" id="apps" aria-labelledby="apps-title">
+      <div class="shell">
+        <header class="apps-heading reveal">
+          <div>
+            <p class="kicker" data-i18n="apps.kicker"></p>
+            <h2 id="apps-title" data-i18n-lines="apps.title"></h2>
+          </div>
+          <p data-i18n="apps.intro"></p>
+        </header>
 
-        <div class="card-grid services-grid">
-          <article class="card service-card reveal">
-            <span class="icon" aria-hidden="true">01</span>
-            <h3>Phát triển ứng dụng di động</h3>
-            <p>Phát triển ứng dụng mobile ổn định, dễ sử dụng và phù hợp với nhu cầu vận hành thực tế của doanh nghiệp.</p>
-          </article>
-          <article class="card service-card reveal">
-            <span class="icon" aria-hidden="true">02</span>
-            <h3>Thiết kế website doanh nghiệp</h3>
-            <p>Xây dựng website chuyên nghiệp, tải nhanh, hiển thị tốt trên mọi thiết bị và truyền tải rõ giá trị thương hiệu.</p>
-          </article>
-          <article class="card service-card reveal">
-            <span class="icon" aria-hidden="true">03</span>
-            <h3>Chatbot AI & Trợ lý AI</h3>
-            <p>Xây dựng chatbot và trợ lý AI để hỗ trợ tư vấn khách hàng, tra cứu thông tin và xử lý công việc nội bộ.</p>
-          </article>
-          <article class="card service-card reveal">
-            <span class="icon" aria-hidden="true">04</span>
-            <h3>Tự động hóa quy trình</h3>
-            <p>Tối ưu các công việc lặp lại, kết nối dữ liệu giữa các công cụ và giúp đội ngũ vận hành hiệu quả hơn.</p>
-          </article>
-          <article class="card service-card reveal">
-            <span class="icon" aria-hidden="true">05</span>
-            <h3>Firebase / Cloud Backend</h3>
-            <p>Thiết lập backend với cơ sở dữ liệu, xác thực người dùng, lưu trữ, API và hạ tầng cloud có khả năng mở rộng.</p>
-          </article>
-          <article class="card service-card reveal">
-            <span class="icon" aria-hidden="true">06</span>
-            <h3>Thiết kế UI/UX</h3>
-            <p>Thiết kế giao diện rõ ràng, luồng trải nghiệm mạch lạc và phù hợp với hành vi người dùng thực tế.</p>
-          </article>
-        </div>
+        <article class="app-story app-timtim">
+          <div class="app-copy reveal">
+            <p class="app-number">01 / TimTim</p>
+            <div class="app-title-line">
+              <h3>TimTim</h3>
+              <span data-i18n="apps.status"></span>
+            </div>
+            <p class="app-description" data-i18n="apps.timtimDescription"></p>
+            <nav class="app-policy-links" aria-label="" data-i18n-aria-label="apps.timtimPoliciesLabel">
+              <a href="timtim-privacy/" data-i18n="apps.privacy"></a>
+              <a href="timtim-terms/" data-i18n="apps.terms"></a>
+              <a href="timtim-account-deletion/" data-i18n="apps.accountDeletion"></a>
+            </nav>
+          </div>
+          <figure class="app-visual timtim-visual reveal" data-drift="0.14">
+            <div class="visual-window" aria-hidden="true">
+              <div class="visual-heading"><span class="app-dot timtim-dot"></span><strong data-i18n="apps.timtimVisualHeading"></strong></div>
+              <div class="connection-map"><span></span><i></i><span></span><i></i><span></span></div>
+              <div class="conversation-card"><small data-i18n="apps.timtimVisualLabel"></small><strong data-i18n="apps.timtimVisualMessage"></strong></div>
+            </div>
+            <figcaption data-i18n="apps.timtimCaption"></figcaption>
+          </figure>
+        </article>
+
+        <article class="app-story app-tarot">
+          <div class="app-copy reveal">
+            <p class="app-number">02 / Tarot Queen</p>
+            <div class="app-title-line">
+              <h3>Tarot Queen</h3>
+              <span data-i18n="apps.status"></span>
+            </div>
+            <p class="app-description" data-i18n="apps.tarotDescription"></p>
+            <nav class="app-policy-links" aria-label="" data-i18n-aria-label="apps.tarotPoliciesLabel">
+              <a href="tarot-queen-privacy/" data-i18n="apps.privacy"></a>
+              <a href="tarot-queen-terms/" data-i18n="apps.terms"></a>
+              <a href="tarot-queen-account-deletion/" data-i18n="apps.accountDeletion"></a>
+            </nav>
+          </div>
+          <figure class="app-visual tarot-visual reveal" data-drift="0.14">
+            <div class="visual-window" aria-hidden="true">
+              <div class="tarot-spread"><span>II</span><span>✦</span><span>VI</span></div>
+              <p class="tarot-caption" data-i18n="apps.tarotVisualMessage"></p>
+            </div>
+            <figcaption data-i18n="apps.tarotCaption"></figcaption>
+          </figure>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">QUY TRÌNH</p>
-          <h2>Lộ trình rõ ràng từ ý tưởng đến ra mắt</h2>
-        </div>
-
-        <ol class="process-list">
-          <li class="process-step reveal">
-            <span>01</span>
-            <h3>Tìm hiểu ý tưởng kinh doanh</h3>
-          </li>
-          <li class="process-step reveal">
-            <span>02</span>
-            <h3>Thiết kế trải nghiệm người dùng</h3>
-          </li>
-          <li class="process-step reveal">
-            <span>03</span>
-            <h3>Xây dựng app hoặc website</h3>
-          </li>
-          <li class="process-step reveal">
-            <span>04</span>
-            <h3>Kết nối AI và hệ thống backend</h3>
-          </li>
-          <li class="process-step reveal">
-            <span>05</span>
-            <h3>Kiểm thử và ra mắt</h3>
-          </li>
+    <section class="section build" id="build" aria-labelledby="build-title">
+      <div class="shell build-layout">
+        <header class="build-heading reveal">
+          <p class="kicker" data-i18n="build.kicker"></p>
+          <h2 id="build-title" data-i18n-lines="build.title"></h2>
+        </header>
+        <ol class="build-stages">
+          <li class="reveal"><span>01</span><h3 data-i18n="build.discoverTitle"></h3><p data-i18n="build.discoverBody"></p></li>
+          <li class="reveal"><span>02</span><h3 data-i18n="build.designTitle"></h3><p data-i18n="build.designBody"></p></li>
+          <li class="reveal"><span>03</span><h3 data-i18n="build.buildTitle"></h3><p data-i18n="build.buildBody"></p></li>
+          <li class="reveal"><span>04</span><h3 data-i18n="build.operateTitle"></h3><p data-i18n="build.operateBody"></p></li>
         </ol>
       </div>
     </section>
 
-    <section class="section apps-section" id="apps">
-      <div class="container">
-        <div class="section-heading apps-heading reveal">
-          <p class="eyebrow">ỨNG DỤNG ĐANG PHÁT TRIỂN</p>
-          <h2>Ứng dụng VNTYPHOON đang phát triển</h2>
-          <p>Các sản phẩm dưới đây đang được VNTYPHOON xây dựng và hoàn thiện, tập trung vào trải nghiệm dễ dùng, tính thực tế và khả năng mở rộng lâu dài.</p>
-        </div>
-
-        <div class="apps-grid">
-          <article class="timtim-card reveal" data-policy-card>
-            <div class="timtim-card-main">
-              <div class="timtim-card-header">
-                <span class="timtim-icon" aria-hidden="true">
-                  <svg viewBox="0 0 32 32" focusable="false">
-                    <rect x="9" y="3.5" width="14" height="25" rx="3" />
-                    <path d="M13.5 7h5M14.5 24.5h3" />
-                    <path d="M16 19.5s-5-3.1-5-6.5c0-2.8 3.6-3.7 5-1.3 1.4-2.4 5-1.5 5 1.3 0 3.4-5 6.5-5 6.5Z" />
-                  </svg>
-                </span>
-                <div class="timtim-title-row">
-                  <h3>TimTim</h3>
-                  <span class="timtim-status">Đang phát triển</span>
-                </div>
-              </div>
-              <p>Ứng dụng kết nối người dùng theo hướng chân thành, an toàn và dễ sử dụng. TimTim được thiết kế để hỗ trợ giao tiếp, gặp gỡ và tạo ra những kết nối có ý nghĩa hơn.</p>
-              <button class="policy-toggle" type="button" aria-expanded="false" aria-controls="timtim-policy-panel" data-policy-toggle>
-                <span data-policy-label>Xem chính sách</span>
-                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                  <path d="m5 7.5 5 5 5-5" />
-                </svg>
-              </button>
-            </div>
-
-            <div class="timtim-policy-panel" id="timtim-policy-panel" data-policy-panel hidden>
-              <p>Thông tin và chính sách</p>
-              <div class="policy-links">
-                <a href="timtim-privacy/">Chính sách bảo mật</a>
-                <a href="timtim-terms/">Điều khoản sử dụng</a>
-                <a href="timtim-account-deletion/">Xóa tài khoản</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="timtim-card reveal" data-policy-card>
-            <div class="timtim-card-main">
-              <div class="timtim-card-header">
-                <span class="timtim-icon" aria-hidden="true">
-                  <svg viewBox="0 0 32 32" focusable="false">
-                    <rect x="8" y="5" width="16" height="22" rx="2.5" />
-                    <path d="M16 9.5v13M11.5 16h9" />
-                    <path d="m16 11 1.3 3.7L21 16l-3.7 1.3L16 21l-1.3-3.7L11 16l3.7-1.3L16 11Z" />
-                  </svg>
-                </span>
-                <div class="timtim-title-row">
-                  <h3>Tarot Queen</h3>
-                  <span class="timtim-status">Đang phát triển</span>
-                </div>
-              </div>
-              <p>Ứng dụng tarot dành cho người dùng muốn khám phá thông điệp mỗi ngày, lưu lại trải bài và trải nghiệm nội dung tinh thần theo cách nhẹ nhàng, trực quan và dễ sử dụng.</p>
-              <button class="policy-toggle" type="button" aria-expanded="false" aria-controls="tarot-queen-policy-panel" data-policy-toggle>
-                <span data-policy-label>Xem chính sách</span>
-                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                  <path d="m5 7.5 5 5 5-5" />
-                </svg>
-              </button>
-            </div>
-
-            <div class="timtim-policy-panel" id="tarot-queen-policy-panel" data-policy-panel hidden>
-              <p>Thông tin và chính sách</p>
-              <div class="policy-links">
-                <a href="tarot-queen-privacy/">Chính sách bảo mật</a>
-                <a href="tarot-queen-terms/">Điều khoản sử dụng</a>
-                <a href="tarot-queen-account-deletion/">Xóa tài khoản</a>
-              </div>
-            </div>
-          </article>
-        </div>
+    <section class="vision" aria-labelledby="vision-title">
+      <div class="shell reveal">
+        <p class="kicker" data-i18n="vision.kicker"></p>
+        <h2 id="vision-title" data-i18n-lines="vision.title"></h2>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container">
-        <div class="contact-panel reveal">
-          <p class="eyebrow">LIÊN HỆ</p>
-          <h2>Liên hệ</h2>
-          <p class="contact-description">Mọi thắc mắc về ứng dụng, website, công cụ AI, chatbot hoặc hệ thống tự động hóa, vui lòng liên hệ qua email. VNTYPHOON sẽ phản hồi để trao đổi thêm về nhu cầu và hướng triển khai phù hợp.</p>
-          <a class="contact-email" href="mailto:contact@vntyphoon.com">contact@vntyphoon.com</a>
-          <a class="button contact-button" href="mailto:contact@vntyphoon.com">Gửi email</a>
-          <p class="contact-note">Trang này là website giới thiệu công ty VNTYPHOON COMPANY LIMITED. Không có đăng ký, đăng nhập, thanh toán hay biểu mẫu liên hệ. Mọi liên hệ chỉ qua email.</p>
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-layout">
+        <div class="reveal">
+          <p class="kicker" data-i18n="contact.kicker"></p>
+          <h2 id="contact-title" data-i18n-lines="contact.title"></h2>
+        </div>
+        <div class="contact-action reveal">
+          <p class="contact-intro" data-i18n="contact.body"></p>
+          <ul class="contact-topics" aria-label="" data-i18n-aria-label="contact.topicsLabel">
+            <li data-i18n="contact.topicPartnerships"></li>
+            <li data-i18n="contact.topicSupport"></li>
+            <li data-i18n="contact.topicMedia"></li>
+          </ul>
+          <a class="email-link" href="mailto:contact@vntyphoon.com">contact@vntyphoon.com <span aria-hidden="true">↗</span></a>
+          <p class="contact-response" data-i18n="contact.responseTime"></p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="brand" href="#top" aria-label="Trang chủ Vntyphoon">
-        <img class="brand-mark" src="assets/logo/vntyphoon-wing-v-transparent.png" alt="" aria-hidden="true" />
-        <span>VNTYPHOON COMPANY LIMITED</span>
-      </a>
-      <p>© 2026 VNTYPHOON COMPANY LIMITED. Ứng dụng hiện đại, tự động hóa và hệ thống AI.</p>
+  <footer class="site-footer" id="policies">
+    <div class="shell footer-panel">
+      <div class="footer-grid">
+        <section class="footer-company" aria-labelledby="footer-company-title">
+          <div class="footer-brand">
+            <span class="footer-brand-mark" aria-hidden="true">
+              <img src="assets/logo/vntyphoon-wing-v-transparent.png" width="1098" height="653" alt="" />
+            </span>
+            <div>
+              <strong id="footer-company-title">VNTYPHOON COMPANY LIMITED</strong>
+            </div>
+          </div>
+          <a class="footer-email" href="mailto:contact@vntyphoon.com">contact@vntyphoon.com</a>
+          <p class="footer-description" data-i18n="footer.description"></p>
+        </section>
+
+        <nav class="footer-navigation" aria-labelledby="footer-navigation-title">
+          <p class="footer-column-title" id="footer-navigation-title" data-i18n="footer.navigationLabel"></p>
+          <a href="#about" data-i18n="nav.about"></a>
+          <a href="#philosophy" data-i18n="nav.philosophy"></a>
+          <a href="#apps" data-i18n="nav.apps"></a>
+          <a href="#build" data-i18n="nav.build"></a>
+          <a href="#contact" data-i18n="nav.contact"></a>
+        </nav>
+
+        <nav class="policy-group" aria-labelledby="footer-timtim-title">
+          <p id="footer-timtim-title">TimTim</p>
+          <a href="timtim-privacy/" data-i18n="footer.privacy"></a>
+          <a href="timtim-terms/" data-i18n="footer.terms"></a>
+          <a href="timtim-account-deletion/" data-i18n="footer.accountDeletion"></a>
+        </nav>
+
+        <nav class="policy-group" aria-labelledby="footer-tarot-title">
+          <p id="footer-tarot-title">Tarot Queen</p>
+          <a href="tarot-queen-privacy/" data-i18n="footer.privacy"></a>
+          <a href="tarot-queen-terms/" data-i18n="footer.terms"></a>
+          <a href="tarot-queen-account-deletion/" data-i18n="footer.accountDeletion"></a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 VNTYPHOON COMPANY LIMITED</p>
+        <p data-i18n="footer.statement"></p>
+        <a class="footer-top-link" href="#top">
+          <span data-i18n="footer.backToTop"></span>
+          <span aria-hidden="true">↑</span>
+        </a>
+      </div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

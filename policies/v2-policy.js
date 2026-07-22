@@ -38,7 +38,7 @@
     if (header) {
       header.innerHTML = `
         <div class="policy-shell policy-header-inner">
-          <a class="policy-brand" href="../v2/#top" data-v2-home-link data-policy-i18n-aria-label="brand.home">
+          <a class="policy-brand" href="../#top" data-home-link data-policy-i18n-aria-label="brand.home">
             <span class="policy-brand-mark" aria-hidden="true">
               <img src="../assets/logo/vntyphoon-wing-v-transparent.png" width="1098" height="653" alt="" />
             </span>
@@ -51,7 +51,7 @@
           </button>
 
           <nav class="policy-navigation" id="policy-navigation" data-policy-nav data-policy-i18n-aria-label="nav.primary">
-            <a class="policy-back-link" href="../v2/#apps" data-v2-apps-link>
+            <a class="policy-back-link" href="../#apps" data-apps-link>
               <span aria-hidden="true">←</span>
               <span data-policy-i18n="nav.back"></span>
             </a>
@@ -91,7 +91,7 @@
         </div>
         <div class="policy-shell policy-footer-bottom">
           <span>© 2026 VNTYPHOON COMPANY LIMITED.</span>
-          <a href="../v2/#apps" data-v2-apps-link data-policy-i18n="footer.back"></a>
+          <a href="../#apps" data-apps-link data-policy-i18n="footer.back"></a>
         </div>`;
     }
 
@@ -146,8 +146,8 @@
     if (languageNotice) heading.insertAdjacentElement("afterend", languageNotice);
   }
 
-  function v2Url(language, hash) {
-    const url = new URL("../v2/", window.location.href);
+  function homepageUrl(language, hash) {
+    const url = new URL("../", window.location.href);
     url.searchParams.set("lang", language);
     url.hash = hash;
     return `${url.pathname}${url.search}${url.hash}`;
@@ -192,11 +192,11 @@
       button.setAttribute("aria-pressed", String(isActive));
     });
 
-    document.querySelectorAll("[data-v2-home-link]").forEach((link) => {
-      link.setAttribute("href", v2Url(nextLanguage, "top"));
+    document.querySelectorAll("[data-home-link]").forEach((link) => {
+      link.setAttribute("href", homepageUrl(nextLanguage, "top"));
     });
-    document.querySelectorAll("[data-v2-apps-link]").forEach((link) => {
-      link.setAttribute("href", v2Url(nextLanguage, "apps"));
+    document.querySelectorAll("[data-apps-link]").forEach((link) => {
+      link.setAttribute("href", homepageUrl(nextLanguage, "apps"));
     });
     document.querySelectorAll("[data-policy-route]").forEach((link) => {
       const url = new URL(link.getAttribute("href"), window.location.href);
