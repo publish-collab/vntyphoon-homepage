@@ -857,6 +857,16 @@ h3 {
   line-height: 0.9;
 }
 
+.timtim-title-link {
+  border-radius: 0.08em;
+  transition: color 180ms ease;
+}
+
+.timtim-title-link:hover,
+.timtim-title-link:focus-visible {
+  color: var(--blue);
+}
+
 .app-title-line span {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
@@ -873,6 +883,10 @@ h3 {
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.35vw, 1.15rem);
   text-wrap: pretty;
+}
+
+.timtim-website-action {
+  margin-bottom: 1.25rem;
 }
 
 .app-policy-links {
@@ -903,6 +917,16 @@ h3 {
   min-width: 0;
   margin: 0;
   padding-bottom: 2.6rem;
+}
+
+.timtim-visual-link {
+  display: block;
+  border-radius: clamp(22px, 3vw, 42px);
+}
+
+.timtim-visual-link:focus-visible {
+  outline-color: var(--blue);
+  outline-offset: 5px;
 }
 
 .visual-window {
