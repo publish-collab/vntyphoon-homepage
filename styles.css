@@ -867,6 +867,16 @@ h3 {
   color: var(--blue);
 }
 
+.tarot-title-link {
+  border-radius: 0.08em;
+  transition: color 180ms ease;
+}
+
+.tarot-title-link:hover,
+.tarot-title-link:focus-visible {
+  color: var(--blue);
+}
+
 .app-title-line span {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
@@ -886,6 +896,10 @@ h3 {
 }
 
 .timtim-website-action {
+  margin-bottom: 1.25rem;
+}
+
+.tarot-website-action {
   margin-bottom: 1.25rem;
 }
 
@@ -925,6 +939,16 @@ h3 {
 }
 
 .timtim-visual-link:focus-visible {
+  outline-color: var(--blue);
+  outline-offset: 5px;
+}
+
+.tarot-visual-link {
+  display: block;
+  border-radius: clamp(22px, 3vw, 42px);
+}
+
+.tarot-visual-link:focus-visible {
   outline-color: var(--blue);
   outline-offset: 5px;
 }
