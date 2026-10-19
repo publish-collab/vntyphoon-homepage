@@ -149,7 +149,7 @@
                   data-i18n-aria-label="apps.timtimWebsiteLabel"
                 >TimTim</a>
               </h3>
-              <span data-i18n="apps.status"></span>
+              <span data-i18n="apps.timtimStatus"></span>
             </div>
             <p class="app-description" data-i18n="apps.timtimDescription"></p>
             <a
@@ -170,20 +170,17 @@
             </nav>
           </div>
           <figure class="app-visual timtim-visual reveal" data-drift="0.14">
-            <a
-              class="timtim-visual-link"
-              href="https://timtim.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label=""
-              data-i18n-aria-label="apps.timtimWebsiteLabel"
-            >
-              <div class="visual-window" aria-hidden="true">
-                <div class="visual-heading"><span class="app-dot timtim-dot"></span><strong data-i18n="apps.timtimVisualHeading"></strong></div>
-                <div class="connection-map"><span></span><i></i><span></span><i></i><span></span></div>
-                <div class="conversation-card"><small data-i18n="apps.timtimVisualLabel"></small><strong data-i18n="apps.timtimVisualMessage"></strong></div>
-              </div>
-            </a>
+            <div class="visual-window" style="display:flex; align-items:center; justify-content:center; background: var(--paper-blue); padding: 12px; min-height: 520px;">
+              <video 
+                controls 
+                style="width: 100%; height: auto; max-height: 480px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                preload="metadata"
+              >
+                <!-- TODO: Thay src bằng video thực tế của bạn (hoặc dùng YouTube embed) -->
+                <source src="assets/video/timtim-demo.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+              </video>
+            </div>
             <figcaption data-i18n="apps.timtimCaption"></figcaption>
           </figure>
         </article>
